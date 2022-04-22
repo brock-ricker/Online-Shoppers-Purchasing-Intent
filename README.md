@@ -30,18 +30,23 @@ Exploratory Analysis
 The following are some observations about the data:
 
 ![image](https://user-images.githubusercontent.com/99829862/164612937-193ab476-1247-45ca-bdd6-449b6dcf36a7.png)
-A majority of sessions (85%) do not result in a purchase
+
+* A majority of sessions (85%) do not result in a purchase
 
 ![image](https://user-images.githubusercontent.com/99829862/164613042-8b3b85c4-a9f6-467c-92bf-c0a22767888a.png)
-A majority of sessions (85%) are repeat customers
+
+* A majority of sessions (85%) are repeat customers
 
 ![image](https://user-images.githubusercontent.com/99829862/164613137-8bef3407-57e2-4d34-8a0e-cc76dab4ea2e.png)
-Peak months for website visits are: March, May, November, and December
+
+* Peak months for website visits are: March, May, November, and December
 
 ![image](https://user-images.githubusercontent.com/99829862/164613340-eb589500-38ce-4ca1-b246-a1edf0ae5276.png)
-A large majority of visits occur near a holiday
+
+* A large majority of visits occur near a holiday
 
 ![image](https://user-images.githubusercontent.com/99829862/164613523-d5c19503-4600-4deb-b450-376a2e9ad058.png)
+
 The three columns with the highest correlation with Revenue are:
 * Page Values (positive/moderate)
 * Exit Rate (negative/weak)
@@ -54,7 +59,8 @@ To better understand the customer base. I performed a clustering of the sessions
 
 Number of clusters was chosen based on the Inertia and Silhoutte score.
 ![image](https://user-images.githubusercontent.com/99829862/164613650-c4cfa9ac-0795-40da-b3d9-91d315156bf0.png)
-Based on these scores, n_clusters=5 was chosen.
+
+* Based on these scores, n_clusters=5 was chosen.
 
 Here are the mean values for all numeric columns grouped by cluster:
 ![image](https://user-images.githubusercontent.com/99829862/164613736-dcc25c79-892d-4bdb-98c9-05369bf553b8.png)
