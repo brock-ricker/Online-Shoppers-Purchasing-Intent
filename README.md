@@ -86,4 +86,43 @@ Cluster 2 – Stumblers
 * Highest bounce/exit rates
 * 0.4% of sessions result in purchases
 
+Modeling
+---
 
+For this classification problem, I tried multiple models, and tuned hyperparameters using GridSearchCV.
+
+Before tuning, I oversampled the the Revenue = 1 rows.
+
+I tried the following models and tuned the listed parameters (if any):
+
+Dummy Model (stratified)
+* No parameter tuning
+* Overall accuracy
+* * Training set: 50%
+* * Testing set: 50%
+
+Random Forest
+* Paramters tuned: max depth
+* Overall accuracy
+* * Training set: 100%
+* * Testing set: 96%
+
+KNN Classifier
+* Paramters tuned: weights, n_neighbors
+* Overall accuracy
+* * Training set: 100%
+* * Testing set: 94%
+
+Gradient Boosting Classifier
+* Paramters tuned: max depth
+* Overall accuracy
+* * Training set: 100%
+* * Testing set: 96%
+
+The best overall model, when taking into account all metrics and speed of fit/prediction was Random Forest. 
+
+![image](https://user-images.githubusercontent.com/99829862/165889306-8ad315c6-e2df-4281-8372-3cc8982bb646.png)
+* Classification Report for Random Forest Model
+
+![image](https://user-images.githubusercontent.com/99829862/165889344-54456779-ffb4-4ebb-b20b-f653940d62ce.png)
+* Confusion Matrix for Random Forest Model
