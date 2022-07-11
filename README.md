@@ -8,14 +8,14 @@ Data Set
 ---
 The data set used for this project is 12,330 rows, and 18 columns. Each row represents an online shopping session. Each session is unique, and the data covers 1 year.
 
-The target column for this data set is "Revenue" - whether or not a session resulted in a purchse.
+The target column for this data set is "Revenue" - whether or not a session resulted in a purchase.
 
 Besides the target column, the data set consists of 10 numerical and 7 categorical features:
 
 * #of pages visited and time spent on those pages for three types of web pages: Administrative, Informational, Product
 * Three features from google analytics: Bounce Rate/Exit Rate/Page Value
 * Three features based on time of session:
-* * Special Dayy – a measure of closeness to a specific holiday (Xmas, mother’s day, etc..)
+* * Special Day – a measure of closeness to a specific holiday (Xmas, mother’s day, etc..)
 * * Month – Month of the year
 * * Weekend – Weekend yes/no
 * Two features based on the customer’s PC:
@@ -57,7 +57,7 @@ Customer Segmentation
 
 To better understand the customer base. I performed a clustering of the sessions. This was done using a KMeans clustering method.
 
-Number of clusters was chosen based on the Inertia and Silhoutte score.
+Number of clusters was chosen based on the Inertia and Silhouette score.
 ![image](https://user-images.githubusercontent.com/99829862/164613650-c4cfa9ac-0795-40da-b3d9-91d315156bf0.png)
 
 * Based on these scores, n_clusters=5 was chosen.
@@ -65,23 +65,32 @@ Number of clusters was chosen based on the Inertia and Silhoutte score.
 Here are the mean values for all numeric columns grouped by cluster:
 ![image](https://user-images.githubusercontent.com/99829862/164613736-dcc25c79-892d-4bdb-98c9-05369bf553b8.png)
 
-Based on these values there are 3 customer segments I believe are worth highlighting:
+Based on these values there are 4 customer segments I believe are worth highlighting:
 
 Cluster 3 – The buyers
+* 1651 Members (13%)
 * These customers mean business, quickly find the product they want and make a purchase
 * Visit a moderate amount of sites
 * Spend a moderate amount of time
 * 96% of sessions result in purchases
 
 Cluster 1 – Researchers
+* 1160 Members (9%)
 * These customers spend a long time looking for that perfect purchase, but are hesitant to actually buy
 * Visit the most sites
 * Spend the most amount of time on these sites
 * 23% of sessions result in purchases
 
+Cluster 3 – The Buyers
+* 1651 Members (13%)
+* Visit a moderate amount of sites
+* Spend a moderate amount of time
+* 96% of sessions result in purchases
+
 Cluster 2 – Stumblers
+* 748 Members (65)
 * These customers stumbled upon the product pages and have no intention of buying
-* On average <1 administrative/informational, and 2.5 product sites visted
+* On average <1 administrative/informational, and 2.5 product sites visited
 * Spend the least amount of time on these sites
 * Highest bounce/exit rates
 * 0.4% of sessions result in purchases
@@ -91,7 +100,7 @@ Modeling
 
 For this classification problem, I tried multiple models, and tuned hyperparameters using GridSearchCV.
 
-Before tuning, I oversampled the the Revenue = 1 rows.
+Before tuning, I oversampled the Revenue = 1 rows.
 
 I tried the following models and tuned the listed parameters (if any):
 
@@ -102,19 +111,19 @@ Dummy Model (stratified)
 * * Testing set: 50%
 
 Random Forest
-* Paramters tuned: max depth
+* Parameters tuned: max depth
 * Overall accuracy
 * * Training set: 100%
 * * Testing set: 96%
 
 KNN Classifier
-* Paramters tuned: weights, n_neighbors
+* Parameters tuned: weights, n_neighbors
 * Overall accuracy
 * * Training set: 100%
 * * Testing set: 94%
 
 Gradient Boosting Classifier
-* Paramters tuned: max depth
+* Parameters tuned: max depth
 * Overall accuracy
 * * Training set: 100%
 * * Testing set: 96%
